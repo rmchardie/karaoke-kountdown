@@ -653,7 +653,7 @@ h2 {
 }
 
 .levelCompletedPanel .levelCompletedCard, .gameCompletedPanel .gameCompletedCard {
-    background-image:url('../../images/confetti-bg-min.jpg');
+    background-image:url('../images/confetti-bg-min.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

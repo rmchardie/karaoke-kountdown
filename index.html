@@ -11,13 +11,17 @@
     <title>Karaoke Kountdown</title>
 </head>
 <body>
+    <!-- Game Container -->
     <div class="container">
+        <!-- Loading Animation -->
         <div class="intro">
             <img src="images/Logo.png" alt="Intro screen showing logo" class="introImg">
         </div>
+        <!-- Game Header -->
         <div class="header">
             <img src="images/header.png" alt="App header showing logo">
         </div>
+        <!-- Player details panel -->
         <div class="namePlaceholder">
             <div class="playerIcon">
                 <i class="fas fa-user"></i>
@@ -28,6 +32,7 @@
             </div>
             <h4 id="trophyMessage">00</h4>
         </div>
+        <!-- Enter player name panel -->
         <div class="enterName">
             <div class="hero">
                 <img src="images/undraw_select_player_64ca 1.png" alt="Two players in front of their avatars">
@@ -41,6 +46,7 @@
                 <button name="showInstructions" id="showInstructions">How to play</button>
             </div>
         </div>
+        <!-- Game instructions panel -->
         <div class="instructions">
             <div class="instructionsCard">
                     <p>Choose a set of words</p>
@@ -50,6 +56,7 @@
                     <button type="menu" name="hideInstructions" id="hideInstructions">Close instructions</button>
             </div>
         </div>
+        <!-- Word list panel -->
         <div class="mainMenu">
             <h2>Choose a word list</h2>
             <div class="options">
@@ -72,6 +79,7 @@
             </div>
             <small>Not you? ( <a href="#" id="changePlayer">Change player</a> )</small>
         </div>
+        <!-- Timer list panel -->
         <div class="timerMenu">
             <h2>Choose timer difficulty</h2>
             <div class="decreaseBtn">
@@ -96,6 +104,7 @@
                 <a class="setTimerBtn">GET READY!</a>
             </div>
         </div>
+        <!-- Main game panel -->
         <div class="gamePanel">
             <div class="timer">
                 <svg width="151" height="180" viewBox="0 0 151 180" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +117,7 @@
                     </svg>                    
                 <h1 class="gameTimer"></h1>
             </div>
-            <div class="wordContainer">Attention</div>
+            <div class="wordContainer"></div>
             <div class="controls">
                 <div class="btn restart">
                     <i class="fas fa-undo"></i>
@@ -121,6 +130,7 @@
                 </div>
             </div>
         </div>
+        <!-- Time has ran out panel -->
         <div class="timesUpPanel">
             <div class="timesUpCard">
                     <h1>Oops!</h1>
@@ -128,6 +138,7 @@
                     <a class="setTimer setTimerBtn" id="tryAgain">Ready for a new word?</a>
             </div>
         </div>
+        <!-- Level completed panel -->
         <div class="levelCompletedPanel">
             <div class="levelCompletedCard">
                     <h1>Well done!</h1>
@@ -137,6 +148,7 @@
                     <a class="setTimer setTimerBtn" id="nextLevel">Go to the next level</a>
             </div>
         </div>
+        <!-- Game completed panel -->
         <div class="gameCompletedPanel">
             <div class="gameCompletedCard">
                     <h2>Game completed!</h2>
@@ -146,6 +158,7 @@
                     <a class="setTimer setTimerBtn" id="restartGameBtn">Play again?</a>
             </div>
         </div>
+        <!-- Restart game Panel -->
         <div class="restartPanel">
             <div class="restartCard">
                     <p>Are you sure you want to restart the game?</p>
@@ -153,6 +166,7 @@
                     <button type="menu" name="cancelRestart" id="cancelRestart">Cancel</button>
             </div>
         </div>
+        <!-- Game settings Panel -->
         <div class="settingsPanel">
             <div class="settingsCard">
                 <div class="options">
