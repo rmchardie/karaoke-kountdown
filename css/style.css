@@ -632,7 +632,7 @@ h2 {
 .timesUpPanel .timesUpCard {
     background-color: #0077FF;
     background-image: linear-gradient(to bottom, rgba(0, 119, 255, .65), rgba(18,42, 66, .85)), 
-    url(/images/hourglass-bg.jpg);
+    url(images/hourglass-bg.jpg);
     background-position: center;
     background-size: cover;
     color: #fff;
@@ -653,7 +653,7 @@ h2 {
 }
 
 .levelCompletedPanel .levelCompletedCard, .gameCompletedPanel .gameCompletedCard {
-    background-image:url('/images/confetti-bg-min.jpg');
+    background-image:url('images/confetti-bg-min.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
