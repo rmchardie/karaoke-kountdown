@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/game.css" />
+    <title>Game Test</title>
+  </head>
+  <body>
+    <!-- Game Header -->
+    <div class="header-container">
+      <div class="header-container__player-details hidden" id="header">
+        <!-- Player Name -->
+        <div class="header-container__player-name">
+          <i class="fas fa-user"></i>
+          <span id="playerName"></span>
+        </div>
+        <!-- Trophies Won -->
+        <div class="header-container__player-trophies" id="header">
+          <span id="trophiesWon"></span>
+          <i class="fas fa-trophy" id="trophyIcon"></i>
+        </div>
+      </div>
+      <!-- Game Logo -->
+      <div class="header-container__logo">
+        <img src="images/header.png" alt="Karaoke Kountdown logo" />
+      </div>
+    </div>
+    <div id="player" class="screen">
+      Enter player screen
+      <button id="wordBtn" class="btn">Continue</button>
+    </div>
+    <div id="wordList" class="screen hidden">
+      Word List screen
+      <button id="timerBtn" class="btn">Continue</button>
+    </div>
+    <div id="timer" class="screen hidden">
+      Timer screen
+      <button id="gameBtn" class="btn">Continue</button>
+    </div>
+    <div id="game" class="screen hidden">
+      Game screen
+      <button id="resetBtn" class="btn">Reset</button>
+    </div>
+    <script>
+      const playerScreen = document.getElementById("player");
+      const wordScreen = document.getElementById("wordList");
+
+      const wordBtn = document.getElementById("wordBtn");
+
+      wordBtn.addEventListener("click", () => {
+        wordScreen.classList.remove("hidden");
+        playerScreen.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>

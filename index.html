@@ -1,199 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="manifest" href="manifest.json">
-    <link rel="shortcut icon" href="images/icon-192x192.png" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/6a2607df46.js" crossorigin="anonymous" defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <link
+      rel="shortcut icon"
+      href="images/icon-192x192.png"
+      type="image/x-icon"
+    />
     <title>Karaoke Kountdown</title>
-</head>
-<body>
-    <!-- Game Container -->
-    <div class="container">
-        <!-- Loading Animation -->
-        <div class="intro">
-            <img src="images/Logo.png" alt="Intro screen showing logo" class="introImg">
-        </div>
-        <!-- Game Header -->
-        <div class="header">
-            <img src="images/header.png" alt="App header showing logo">
-        </div>
-        <!-- Player details panel -->
-        <div class="namePlaceholder">
-            <div class="playerIcon">
-                <i class="fas fa-user"></i>
-            </div>
-            <h4 id="welcomeMessage"></h4>
-            <div class="trophyIcon">
-                <i class="fas fa-trophy"></i>
-            </div>
-            <h4 id="trophyMessage">00</h4>
-        </div>
-        <!-- Enter player name panel -->
-        <div class="enterName">
-            <div class="hero">
-                <img src="images/undraw_select_player_64ca 1.png" alt="Two players in front of their avatars">
-            </div>
-            <div class="nameInputForm">
-                <h1>Enter player name</h1>
-                <form id="playerForm">
-                    <input type="text" name="playerName" id="playerName" />
-                    <button type="submit" name="setPlayerName" id="setPlayerName">Continue</button>
-                </form>
-                <button name="showInstructions" id="showInstructions">How to play</button>
-            </div>
-        </div>
-        <!-- Game instructions panel -->
-        <div class="instructions">
-            <div class="instructionsCard">
-                    <p>Choose a set of words</p>
-                    <p>Set timer difficulty</p>
-                    <p>Each time you hit the next button a random word will pop up on the screen</p>
-                    <p>If you can sing a song with that word in it before the timer runs out you'll win a trophy!</p>
-                    <button type="menu" name="hideInstructions" id="hideInstructions">Close instructions</button>
-            </div>
-        </div>
-        <!-- Word list panel -->
-        <div class="mainMenu">
-            <h2>Choose a word list</h2>
-            <div class="options">
-                <div class="option" id="option1">
-                    <i class="fas fa-book-open"></i>
-                    <span>One</span>
-                </div>
-                <div class="option" id="option2">
-                    <i class="fas fa-book-open"></i>
-                    <span>Two</span>
-                </div>
-                <div class="option" id="option3">
-                    <i class="fas fa-book-open"></i>
-                    <span>Three</span>
-                </div>
-                <div class="option" id="option4">
-                    <i class="fas fa-book-open"></i>
-                    <span>Four</span>
-                </div>
-            </div>
-            <small>Not you? ( <a href="#" id="changePlayer">Change player</a> )</small>
-        </div>
-        <!-- Timer list panel -->
-        <div class="timerMenu">
-            <h2>Choose timer difficulty</h2>
-            <div class="decreaseBtn">
-                <i class="fas fa-caret-left"></i>
-            </div>
-            <div class="increaseBtn">
-                <i class="fas fa-caret-right"></i>
-            </div>
-            <div class="timer">
-                <svg width="151" height="180" viewBox="0 0 151 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="75" cy="105" r="75" fill="#C4C4C4"/>
-                    <circle cx="75.5" cy="105.5" r="57.5" fill="white"/>
-                    <rect x="59" width="32" height="15" rx="7.5" fill="#C4C4C4"/>
-                    <rect x="68" y="16" width="15" height="15" fill="#C4C4C4"/>
-                    <rect x="131.743" y="28" width="24.6033" height="10.8255" rx="5.41275" transform="rotate(41.222 131.743 28)" fill="#C4C4C4"/>
-                    <rect x="129.339" y="41.2452" width="11.5328" height="10.8255" transform="rotate(41.222 129.339 41.2452)" fill="#C4C4C4"/>
-                    </svg>                    
-                <h1 class="timerLabel">10s</h1>
-            </div>
-            <div class="difficultyLabel">Master</div>
-            <div class="setTimer">
-                <a class="setTimerBtn">GET READY!</a>
-            </div>
-        </div>
-        <!-- Main game panel -->
-        <div class="gamePanel">
-            <div class="timer">
-                <svg width="151" height="180" viewBox="0 0 151 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="75" cy="105" r="75" fill="#C4C4C4"/>
-                    <circle cx="75.5" cy="105.5" r="57.5" fill="white"/>
-                    <rect x="59" width="32" height="15" rx="7.5" fill="#C4C4C4"/>
-                    <rect x="68" y="16" width="15" height="15" fill="#C4C4C4"/>
-                    <rect x="131.743" y="28" width="24.6033" height="10.8255" rx="5.41275" transform="rotate(41.222 131.743 28)" fill="#C4C4C4"/>
-                    <rect x="129.339" y="41.2452" width="11.5328" height="10.8255" transform="rotate(41.222 129.339 41.2452)" fill="#C4C4C4"/>
-                    </svg>                    
-                <h1 class="gameTimer"></h1>
-            </div>
-            <div class="wordContainer"></div>
-            <div class="controls">
-                <div class="btn restart">
-                    <i class="fas fa-undo"></i>
-                </div>
-                <div class="btn playPause">
-                    <i class="fas fa-forward" id="playIcon"></i>
-                </div>
-                <div class="btn settings">
-                    <i class="fas fa-cog"></i>
-                </div>
-            </div>
-        </div>
-        <!-- Time has ran out panel -->
-        <div class="timesUpPanel">
-            <div class="timesUpCard">
-                    <h1>Oops!</h1>
-                    <h3>You've ran out of time!</h3>
-                    <a class="setTimer setTimerBtn" id="tryAgain">Ready for a new word?</a>
-            </div>
-        </div>
-        <!-- Level completed panel -->
-        <div class="levelCompletedPanel">
-            <div class="levelCompletedCard">
-                    <h1>Well done!</h1>
-                    <h3>Trophies won:</h3>
-                    <i class="fas fa-trophy totalTrophies"></i>
-                    <div class="trophiesWon"></div>
-                    <a class="setTimer setTimerBtn" id="nextLevel">Go to the next level</a>
-            </div>
-        </div>
-        <!-- Game completed panel -->
-        <div class="gameCompletedPanel">
-            <div class="gameCompletedCard">
-                    <h2>Game completed!</h2>
-                    <h3>Trophies won:</h3>
-                    <i class="fas fa-trophy totalTrophies"></i>
-                    <div class="totalTrophiesWon">Trophies</div>
-                    <a class="setTimer setTimerBtn" id="restartGameBtn">Play again?</a>
-            </div>
-        </div>
-        <!-- Restart game Panel -->
-        <div class="restartPanel">
-            <div class="restartCard">
-                    <p>Are you sure you want to restart the game?</p>
-                    <button type="menu" name="confirmRestart" id="confirmRestart" class="setTimer">OK</button>
-                    <button type="menu" name="cancelRestart" id="cancelRestart">Cancel</button>
-            </div>
-        </div>
-        <!-- Game settings Panel -->
-        <div class="settingsPanel">
-            <div class="settingsCard">
-                <div class="options">
-                    <div class="option" id="settingsRestart">
-                        <i class="fas fa-undo"></i>
-                        <span>Reset game</span>
-                    </div>
-                    <div class="option" id="settingsWords">
-                        <i class="fas fa-book-open"></i>
-                        <span>Word List</span>
-                    </div>
-                    <div class="option" id="settingsTimers">
-                        <i class="fas fa-stopwatch"></i>
-                        <span>Set timer</span>
-                    </div>
-                    <div class="option cancelBtn" id="cancelSettings">
-                        <i class="fas fa-times"></i>
-                        <span>Cancel</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+  </head>
+  <body>
+    <!-- Loading Animation -->
+    <div class="intro-container">
+      <img
+        src="images/logo.png"
+        alt="Intro screen showing logo"
+        class="intro-image"
+      />
     </div>
+    <!-- Container for the main game -->
+    <div class="app-container">
+      <!-- Game Header -->
+      <div class="header-container">
+        <div class="header-container__player-details hidden" id="header">
+          <!-- Player Name -->
+          <div class="header-container__player-name">
+            <i class="fas fa-user"></i>
+            <span id="playerName"></span>
+          </div>
+          <!-- Trophies Won -->
+          <div class="header-container__player-trophies" id="header">
+            <span id="trophiesWon"></span>
+            <i class="fas fa-trophy" id="trophyIcon"></i>
+          </div>
+        </div>
+        <!-- Game Logo -->
+        <div class="header-container__logo">
+          <img src="images/header.png" alt="Karaoke Kountdown logo" />
+        </div>
+      </div>
+      <!-- Add player screen -->
+      <div class="player-container">
+        <div class="player-container__player-image">
+          <img
+            src="images/undraw_select_player_64ca 1.png"
+            alt="avatar selection image"
+          />
+        </div>
+        <h1>Enter player name</h1>
+        <!-- Player name input form -->
+        <form id="setPlayerNameForm">
+          <input type="text" name="username" id="username" autofocus />
+          <button id="setPlayerNameBtn">Continue</button>
+        </form>
+      </div>
+      <!-- Word list screen -->
+      <div class="word-list-container hidden">
+        <h1>Choose a word list</h1>
+        <div class="word-list-container__btns">
+          <button value="1" class="wordListBtn">
+            <i class="fas fa-book-open"></i>One
+          </button>
+          <button value="2" class="wordListBtn">
+            <i class="fas fa-book-open"></i>Two
+          </button>
+          <button value="3" class="wordListBtn">
+            <i class="fas fa-book-open"></i>Three
+          </button>
+          <button value="4" class="wordListBtn">
+            <i class="fas fa-book-open"></i>Four
+          </button>
+        </div>
+      </div>
+      <!-- Set timer screen -->
+      <div class="timer-container hidden">
+        <h1>Set timer difficulty</h1>
+        <div class="timer-container__btns">
+          <img
+            src="images/10s.png"
+            alt="10 second timer"
+            data-duration="10"
+            class="timerBtn"
+          />
+          <img
+            src="images/20s.png"
+            alt="20 second timer"
+            data-duration="20"
+            class="timerBtn"
+          />
+          <img
+            src="images/30s.png"
+            alt="30 second timer"
+            data-duration="30"
+            class="timerBtn"
+          />
+        </div>
+        <div class="timer-container__text">
+          Can you score a
+          <p><strong>PERFECT 10?</strong></p>
+        </div>
+      </div>
+      <!-- Countdown till game starts screen -->
+      <div class="countdown-container hidden">
+        <h1 class="countdown-container__header">GET READY!</h1>
+        <strong class="countdown-container__text">3</strong>
+      </div>
+      <!-- Game screen -->
+      <div class="game-container hidden">
+        <div class="game-container__word-box-container">
+          <div class="game-container__word-box"></div>
+        </div>
+        <div class="game-container__slogan">
+          Hit the buzzer before time runs out!
+        </div>
+        <div class="game-container__timer-container">
+          <div class="game-container__timer"></div>
+          <div class="game-container__timer countdown"></div>
+        </div>
+        <div class="game-container__timer-label"></div>
+        <div class="game-container__buzzer">
+          <i class="fas fa-forward"></i>
+        </div>
+      </div>
+      <!-- Time's up screen -->
+      <div class="times-up-container hidden">
+        <div class="times-up-container__bg">
+          <h2>Times up!</h2>
+          <i class="fa-solid fa-hourglass-empty stopwatch"></i>
+          <p>Oops! You've ran out of time!</p>
+          <button id="tryAgainBtn">Try again?</button>
+        </div>
+      </div>
+      <!-- Footer navigation -->
+      <div class="footer-container">
+        <div class="instructions-btn">
+          <i class="fas fa-info-circle"></i> how to play
+        </div>
+        <div class="change-player-btn hidden">
+          <i class="fas fa-user-edit"></i> change player
+        </div>
+        <div class="game-btns hidden">
+          <div class="game-btns__restart-btn">
+            <i class="fas fa-undo"></i>
+          </div>
+          <div class="game-btns__settings-btn">
+            <i class="fas fa-cog"></i>
+          </div>
+        </div>
+      </div>
+      <!-- Instructions screen -->
+      <div class="instructions-container hidden">
+        <div class="instructions-container__bg">
+          <h2>How to play</h2>
+          <ul>
+            <li><span>1.</span>Enter your name to begin.</li>
+            <li><span>2.</span>Choose a word list.</li>
+            <li><span>3.</span>Choose a timer difficulty.</li>
+            <li>
+              <span>4.</span>The timer starts and a random word will be
+              displayed on the screen.
+            </li>
+            <li>
+              <span>5.</span>Can you think of a song with that word in the title
+              and hit the buzzer before the timer runs out to win a trophy?
+            </li>
+          </ul>
+          <button id="closeInstructionsBtn">Close instructions</button>
+        </div>
+      </div>
+      <!-- Reset game screen -->
+      <div class="reset-game-container hidden">
+        <div class="reset-game-container__bg">
+          <h2>Game paused</h2>
+          <p style="text-align: center; margin: 10px">
+            Are you sure you want to reset the game?
+          </p>
+          <button id="confirmResetBtn">OK</button>
+          <button id="cancelResetBtn">Cancel</button>
+        </div>
+      </div>
+      <!-- Settings screen -->
+      <div class="game-settings-container hidden">
+        <div class="game-settings-container__bg">
+          <h2>Game paused</h2>
+          <p style="text-align: center; margin: 10px">
+            Which setting would you like to change?
+          </p>
+          <button id="settingsResetBtn">Reset Game</button>
+          <button id="settingsWordListBtn">Word List</button>
+          <button id="settingsTimerBtn">Timer difficulty</button>
+          <button id="settingsCancelBtn" class="cancel">Cancel</button>
+        </div>
+      </div>
+      <!-- Level complete screen -->
+      <div class="level-complete-container hidden">
+        <div class="level-complete-container__bg">
+          <h3>Level completed</h3>
+          <p id="levelCompletedTrophieText">You achieved 8 Trophies!</p>
+          <button id="nextLevelBtn">Continue to next level</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/confetti.js"></script>
     <script src="js/intro.js"></script>
-    <script src="js/mainMenu.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/game.js"></script>
-    <script src="js/timer.js"></script>
-</body>
+  </body>
 </html>
